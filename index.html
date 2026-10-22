@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cổng Dịch Vụ & Hỗ Trợ Sinh Viên | Trường Đại Học Bách Khoa - Đại Học Đà Nẵng</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            dut: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              600: '#1e60b5',
+              700: '#0b4386',
+              800: '#003b7a',
+              900: '#002b5c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="min-h-full bg-slate-50 text-slate-800 flex flex-col font-sans antialiased">
+
+  <!-- ==================== TOP SYSTEM STATUS BAR ==================== -->
+  <div class="bg-dut-900 text-white text-xs px-4 py-1.5 border-b border-dut-800/80">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 status-pulse"></span>
+        <span class="font-medium text-slate-200">Hệ thống Dịch vụ Một cửa Sinh viên — Trường Đại học Bách khoa (DUT)</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px] text-slate-300">
+        <a href="https://sv.dut.udn.vn/" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-[14px] text-emerald-400">link</span>
+          <span class="font-semibold underline">Cổng SV: sv.dut.udn.vn</span>
+        </a>
+        <span class="text-slate-600">|</span>
+        <a href="https://dut.udn.vn/VanBanPhapQuy/page/1" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-[14px] text-amber-300">library_books</span>
+          <span class="font-semibold underline">VB Pháp quy DUT</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN HEADER ==================== -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between gap-4">
+        
+        <!-- DUT University Emblem & Title -->
+        <a href="#catalog" data-target-tab="catalog" class="flex items-center gap-3 shrink-0 group">
+          <div class="w-10 h-10 rounded-xl bg-dut-800 text-white flex items-center justify-center font-bold shadow-xs group-hover:bg-dut-700 transition-colors">
+            <span class="material-symbols-outlined text-[24px]">school</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[11px] font-bold text-dut-800 tracking-wider uppercase">ĐẠI HỌC ĐÀ NẴNG</span>
+            <span class="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">TRƯỜNG ĐẠI HỌC BÁCH KHOA</span>
+          </div>
+        </a>
+
+        <!-- Main Navigation Tabs -->
+        <nav class="hidden lg:flex items-center gap-1 bg-slate-100/90 p-1 rounded-xl border border-slate-200" id="mainNavigation">
+          <a href="#catalog" data-target-tab="catalog" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all bg-blue-50 text-dut-800 shadow-xs">
+            <span class="material-symbols-outlined nav-icon text-[18px] text-dut-800">menu_book</span>
+            <span>Tra cứu & Quy chế</span>
+          </a>
+          <a href="#procedure" data-target-tab="procedure" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all">
+            <span class="material-symbols-outlined nav-icon text-[18px]">assignment_turned_in</span>
+            <span>Chi tiết thủ tục (QĐ 1414)</span>
+          </a>
+          <a href="#assistant" data-target-tab="assistant" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all">
+            <span class="material-symbols-outlined nav-icon text-[18px]">smart_toy</span>
+            <span>Trợ lý học vụ AI</span>
+          </a>
+          <a href="#calendar" data-target-tab="calendar" class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all">
+            <span class="material-symbols-outlined nav-icon text-[18px]">calendar_month</span>
+            <span>Lịch & Bản tin</span>
+          </a>
+        </nav>
+
+        <!-- Right Quick Actions: Notifications & DUT Student Profile -->
+        <div class="flex items-center gap-3 shrink-0">
+          <button type="button" onclick="showToast('Hội đồng xét học bổng thông báo danh sách dự kiến HK1 trên sv.dut.udn.vn', 'Thông báo DUT')" class="w-9 h-9 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 text-slate-600 flex items-center justify-center transition-colors relative" title="Thông báo mới">
+            <span class="material-symbols-outlined text-[20px]">notifications</span>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white"></span>
+          </button>
+
+          <!-- Student Profile Chip -->
+          <div class="flex items-center gap-2.5 pl-2 border-l border-slate-200">
+            <div class="w-8 h-8 rounded-full bg-dut-800 text-white flex items-center justify-center text-xs font-bold shadow-xs">
+              NA
+            </div>
+            <div class="hidden sm:flex flex-col text-left">
+              <span class="text-xs font-bold text-slate-900 leading-none">Nguyễn Văn A</span>
+              <span class="text-[11px] text-slate-500 mt-0.5">MSSV: 102230088 • Lớp: 23T_DT1</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile Navigation Sub-bar -->
+      <div class="lg:hidden flex items-center justify-around py-2 border-t border-slate-200/60 overflow-x-auto gap-2">
+        <a href="#catalog" data-target-tab="catalog" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-blue-50 text-dut-800 whitespace-nowrap">Tra cứu</a>
+        <a href="#procedure" data-target-tab="procedure" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-600 whitespace-nowrap">Thủ tục</a>
+        <a href="#assistant" data-target-tab="assistant" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-600 whitespace-nowrap">Trợ lý AI</a>
+        <a href="#calendar" data-target-tab="calendar" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-600 whitespace-nowrap">Lịch & Tin tức</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT AREA ==================== -->
+  <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ======================================================== -->
+    <!-- SCREEN 1: TRA CỨU & DANH MỤC QUY CHẾ DUT                -->
+    <!-- ======================================================== -->
+    <div id="tab-catalog" class="tab-pane active space-y-5">
+      
+      <!-- Academic Status Strip: Compact, Clean, Scannable -->
+      <div class="bg-white border border-slate-200 rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-4 shadow-xs">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-50 text-dut-800 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px]">badge</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+            <span class="font-bold text-slate-900">Khoa Công nghệ Thông tin</span>
+            <span class="text-slate-300">|</span>
+            <span class="text-slate-600 font-medium">Lớp sinh hoạt: <strong class="text-dut-800 font-bold">23T_DT1</strong></span>
+            <span class="text-slate-300">|</span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+              ĐTBCHK: 8.35 (Thang 10 - Loại Giỏi) • ĐRL: 86
+            </span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="text-right">
+            <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Tiến độ đào tạo</div>
+            <div class="text-xs font-bold text-dut-800">48 / 135 tín chỉ <span class="text-slate-500 font-normal">(35.5%)</span></div>
+          </div>
+          <div class="w-20 bg-slate-100 h-2 rounded-full overflow-hidden border border-slate-200">
+            <div class="bg-dut-600 h-full rounded-full" style="width: 35.5%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filters Container (Text-optimized, Clean) -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h1 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+              <span>Tra cứu Quy chế & Văn bản Học vụ ĐHBK Đà Nẵng</span>
+              <span class="text-[11px] font-semibold text-dut-700 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">Nguồn chính thống</span>
+            </h1>
+            <p class="text-xs text-slate-500 mt-0.5">Đối chiếu tức thời từ Quyết định số 1414/QĐ-ĐHBK và Cổng văn bản pháp quy DUT.</p>
+          </div>
+          
+          <a href="https://dut.udn.vn/VanBanPhapQuy/page/1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs text-dut-700 font-bold hover:underline self-start sm:self-auto">
+            <span>Mở trang Văn bản Pháp quy DUT</span>
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+          </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">search</span>
+          <input 
+            type="text" 
+            id="catalogSearchInput" 
+            placeholder="Nhập từ khóa tìm kiếm (Ví dụ: 1414, học bổng loại giỏi, tín chỉ, tạm hoãn nghĩa vụ quân sự...)" 
+            class="w-full pl-10 pr-10 py-2.5 bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 focus:border-dut-800 rounded-xl text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-dut-600/20 transition-all"
+          />
+          <button type="button" id="clearSearchBtn" class="absolute right-3 text-slate-400 hover:text-slate-600 p-1 rounded-full hidden">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+          </button>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs" id="catalogCategoryGroup">
+          <button type="button" data-category="all" class="cat-pill px-3 py-1.5 rounded-lg font-semibold transition-all bg-dut-800 text-white shadow-xs shrink-0 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px]">grid_view</span>
+            <span>Tất cả văn bản</span>
+          </button>
+          <button type="button" data-category="scholarship" class="cat-pill px-3 py-1.5 rounded-lg font-semibold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px] text-amber-600">workspace_premium</span>
+            <span>Học bổng KKHT (QĐ 1414)</span>
+          </button>
+          <button type="button" data-category="procedure" class="cat-pill px-3 py-1.5 rounded-lg font-semibold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px] text-blue-600">assignment</span>
+            <span>Thủ tục một cửa</span>
+          </button>
+          <button type="button" data-category="regulation" class="cat-pill px-3 py-1.5 rounded-lg font-semibold transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px] text-purple-600">gavel</span>
+            <span>Quy chế đào tạo</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Header -->
+      <div class="flex items-center justify-between text-xs">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-slate-900">Danh mục văn bản được áp dụng</span>
+          <span id="catalogResultCount" class="bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded-full text-[11px]">4 văn bản</span>
+        </div>
+        <div class="text-slate-500 text-[11px]">
+          Căn cứ số liệu: <strong class="text-slate-700">Trường ĐH Bách khoa - ĐH Đà Nẵng</strong>
+        </div>
+      </div>
+
+      <!-- Results Cards Grid (Scannable Cards with Highlight Preview buttons) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="catalogCardsContainer">
+
+        <!-- Card 1: Quyết định 1414/QĐ-ĐHBK (REAL DOCUMENT) -->
+        <div class="catalog-card bg-white border border-slate-200 hover:border-dut-600 hover:shadow-md rounded-xl p-5 flex flex-col justify-between transition-all" data-category="scholarship" data-code="QĐ-1414-ĐHBK" data-title="Quyết định 1414/QĐ-ĐHBK Quy định về xét cấp học bổng cho SV hệ ĐH chính quy tại Trường ĐHBK - ĐHĐN">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">military_tech</span>
+                Văn bản cấp Trường DUT
+              </span>
+              <span class="text-[11px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">
+                Hiệu lực: Từ năm 2021
+              </span>
+            </div>
+
+            <div>
+              <span class="text-[11px] font-mono text-slate-400">Số: 1414/QĐ-ĐHBK (Ban hành 24/5/2021)</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 mt-0.5 leading-snug">
+                Quy định xét, cấp học bổng cho sinh viên hệ ĐH chính quy tại Trường ĐHBK - ĐHĐN
+              </h2>
+            </div>
+
+            <!-- Scannable Parameter Tags (Replacing dense paragraphs) -->
+            <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Thang điểm: <strong>10</strong></span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Điểm TB: <strong>≥ 7.00</strong></span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">ĐRL: <strong>≥ 65</strong></span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Tín chỉ lần 1: <strong>≥ 15</strong></span>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+            <button type="button" onclick="openDocPreview('qd1414', 'dieu5')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold transition-colors">
+              <span class="material-symbols-outlined text-[15px]">find_in_page</span>
+              <span>Xem trích dẫn bôi vàng (Điều 5, 6)</span>
+            </button>
+            <div class="flex items-center gap-2">
+              <a href="tai-lieu-riel/QD_1414_DHBK.pdf" download="QD_1414_DHBK.pdf" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium">
+                <span class="material-symbols-outlined text-[14px]">download</span>
+                <span>PDF (3.8MB)</span>
+              </a>
+              <a href="#procedure" onclick="switchTab('procedure')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dut-800 hover:bg-dut-700 text-white text-xs font-bold transition-colors">
+                <span>Chi tiết</span>
+                <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Văn bản hợp nhất 28/VBHN-BGDĐT (REAL DOCUMENT) -->
+        <div class="catalog-card bg-white border border-slate-200 hover:border-dut-600 hover:shadow-md rounded-xl p-5 flex flex-col justify-between transition-all" data-category="scholarship" data-code="VBHN-28-BGDĐT" data-title="Văn bản hợp nhất số 28/VBHN-BGDĐT về học bổng khuyến khích học tập">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-purple-50 text-purple-700 border border-purple-200 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">gavel</span>
+                Quy định Bộ GD&ĐT
+              </span>
+              <span class="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Học bổng KKHT</span>
+            </div>
+
+            <div>
+              <span class="text-[11px] font-mono text-slate-400">Số: 28/VBHN-BGDĐT</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 mt-0.5 leading-snug">
+                Văn bản hợp nhất Quy định về học bổng khuyến khích học tập đối với HSSV
+              </h2>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Khung chính sách quốc gia</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Trích tối thiểu 8% quỹ học phí</span>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+            <button type="button" onclick="openDocPreview('vbhn28')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold transition-colors">
+              <span class="material-symbols-outlined text-[15px]">find_in_page</span>
+              <span>Xem trích dẫn bôi vàng</span>
+            </button>
+            <a href="tai-lieu-riel/VBHN_28_BGDDT.pdf" download="VBHN_28_BGDDT.pdf" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium">
+              <span class="material-symbols-outlined text-[14px]">download</span>
+              <span>PDF (350KB)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Thông tư 35/2011/TT-BGDĐT (REAL DOCUMENT) -->
+        <div class="catalog-card bg-white border border-slate-200 hover:border-dut-600 hover:shadow-md rounded-xl p-5 flex flex-col justify-between transition-all" data-category="scholarship" data-code="TT-35-BGDĐT" data-title="Thông tư 35/2011/TT-BGDĐT Quy định về trao và nhận học bổng trợ cấp cho người học">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">description</span>
+                Thông tư Bộ GD&ĐT
+              </span>
+              <span class="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Học bổng tài trợ</span>
+            </div>
+
+            <div>
+              <span class="text-[11px] font-mono text-slate-400">Số: 35/2011/TT-BGDĐT</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 mt-0.5 leading-snug">
+                Quy định về việc trao và nhận học bổng, trợ cấp cho người học trong các cơ sở giáo dục
+              </h2>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Nguyên tắc công khai</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Minh bạch đối tượng</span>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+            <button type="button" onclick="openDocPreview('tt35')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-bold transition-colors">
+              <span class="material-symbols-outlined text-[15px]">find_in_page</span>
+              <span>Xem trích dẫn bôi vàng</span>
+            </button>
+            <a href="tai-lieu-riel/TT_35_2011_BGDDT.pdf" download="TT_35_2011_BGDDT.pdf" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium">
+              <span class="material-symbols-outlined text-[14px]">download</span>
+              <span>PDF (993KB)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: Cấp giấy chứng nhận tạm hoãn NVQS (DUT Portal) -->
+        <div class="catalog-card bg-white border border-slate-200 hover:border-dut-600 hover:shadow-md rounded-xl p-5 flex flex-col justify-between transition-all" data-category="procedure" data-code="TT-NVQS-DUT" data-title="Cấp Giấy chứng nhận sinh viên tạm hoãn Nghĩa vụ Quân sự tại DUT">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">verified</span>
+                Dịch vụ Một cửa DUT
+              </span>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Thời gian: 02 ngày</span>
+            </div>
+
+            <div>
+              <span class="text-[11px] font-mono text-slate-400">Phòng Công tác Sinh viên (Khu A)</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 mt-0.5 leading-snug">
+                Thủ tục cấp Giấy xác nhận tạm hoãn Nghĩa vụ Quân sự trực tuyến
+              </h2>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Bản ký số email</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Bản giấy mộc đỏ tại Phòng A104</span>
+              <span class="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">Miễn phí 100%</span>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+            <span class="text-[11px] text-slate-500">Đăng ký trực tiếp tại Cổng SV</span>
+            <a href="https://sv.dut.udn.vn/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dut-800 hover:bg-dut-700 text-white text-xs font-bold transition-colors">
+              <span>Mở sv.dut.udn.vn</span>
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No results fallback message -->
+      <div id="noResultsMessage" class="hidden bg-white border border-slate-200 rounded-xl p-8 text-center space-y-2">
+        <span class="material-symbols-outlined text-slate-400 text-[36px]">search_off</span>
+        <h3 class="text-sm font-bold text-slate-800">Không tìm thấy văn bản phù hợp</h3>
+        <p class="text-xs text-slate-500 max-w-md mx-auto">Vui lòng tra cứu trên trang <a href="https://dut.udn.vn/VanBanPhapQuy/page/1" target="_blank" class="text-blue-800 underline font-bold">Văn bản Pháp quy DUT</a> để xem toàn bộ danh mục của Nhà trường.</p>
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- SCREEN 2: CHI TIẾT THỦ TỤC XÉT HỌC BỔNG (QĐ 1414/QĐ-ĐHBK) -->
+    <!-- ======================================================== -->
+    <div id="tab-procedure" class="tab-pane space-y-5">
+
+      <!-- Breadcrumbs & Action Toolbar -->
+      <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2">
+          <a href="#catalog" onclick="switchTab('catalog')" class="inline-flex items-center gap-1 text-dut-700 hover:text-dut-800 font-bold transition-colors">
+            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+            <span>Danh mục văn bản</span>
+          </a>
+          <span class="text-slate-300">/</span>
+          <span class="text-slate-500">Chi tiết thủ tục</span>
+          <span class="text-slate-300">/</span>
+          <span class="text-slate-800 font-bold">QĐ 1414/QĐ-ĐHBK</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="openDocPreview('qd1414', 'dieu6')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold transition-colors shadow-xs">
+            <span class="material-symbols-outlined text-[15px]">find_in_page</span>
+            <span>Xem trích dẫn bôi vàng (Điều 5 & 6)</span>
+          </button>
+          <button type="button" id="btnSaveProcedure" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-medium transition-colors shadow-xs">
+            <span class="material-symbols-outlined text-[15px]">bookmark_border</span>
+            <span class="btn-text">Lưu theo dõi</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Procedure Header Card -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-xs space-y-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-blue-50 text-dut-800 border border-blue-200">
+            Trường ĐH Bách khoa - ĐHĐN
+          </span>
+          <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">schedule</span>
+            Hạn phản hồi danh sách dự kiến: 17:00 ngày 30/10/2024
+          </span>
+          <span class="px-2.5 py-0.5 rounded-md text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-pulse"></span>
+            Đang công bố danh sách dự kiến trên sv.dut.udn.vn
+          </span>
+        </div>
+
+        <div>
+          <span class="text-xs text-dut-700 font-extrabold uppercase tracking-wider">CĂN CỨ: QUYẾT ĐỊNH SỐ 1414/QĐ-ĐHBK (ĐIỀU 5 & ĐIỀU 6)</span>
+          <h1 class="text-lg sm:text-2xl font-bold text-slate-900 mt-1 leading-tight">
+            Quy trình Xét cấp Học bổng Khuyến khích học tập Học kỳ 1 — Khóa K23
+          </h1>
+        </div>
+
+        <!-- 3-Column Scholarship Comparison Table (Replacing Dense Text!) -->
+        <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                <th class="p-3 font-bold">Mức Học Bổng (QĐ 1414)</th>
+                <th class="p-3 font-bold">Điểm TB Học Kỳ (Thang 10 lần 1)</th>
+                <th class="p-3 font-bold">Điểm Rèn Luyện</th>
+                <th class="p-3 font-bold">Mức Tiền Hưởng</th>
+                <th class="p-3 font-bold text-center">Trạng thái của bạn (Lớp 23T_DT1)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 bg-white">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-bold text-amber-900 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-amber-500 text-[18px]">workspace_premium</span>
+                  <span>Loại Xuất sắc (Loại A)</span>
+                </td>
+                <td class="p-3 font-semibold text-slate-800">Từ 9,00 trở lên</td>
+                <td class="p-3">≥ 90 (Loại Xuất sắc)</td>
+                <td class="p-3 font-bold text-dut-800">140% học bổng Loại C</td>
+                <td class="p-3 text-center text-slate-400">—</td>
+              </tr>
+              <tr class="bg-blue-50/70 border-l-4 border-dut-700">
+                <td class="p-3 font-bold text-dut-900 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-dut-600 text-[18px]">verified</span>
+                  <span>Loại Giỏi (Loại B)</span>
+                </td>
+                <td class="p-3 font-bold text-slate-900">8,00 đến 8,99</td>
+                <td class="p-3 font-semibold text-slate-800">≥ 80 (Loại Tốt)</td>
+                <td class="p-3 font-bold text-dut-800">120% học bổng Loại C</td>
+                <td class="p-3 text-center">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white shadow-xs">
+                    <span class="material-symbols-outlined text-[14px]">check</span>
+                    ĐẠT (ĐTB: 8.35 • ĐRL: 86)
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 font-bold text-slate-800 flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-slate-400 text-[18px]">star</span>
+                  <span>Loại Khá (Loại C)</span>
+                </td>
+                <td class="p-3 font-semibold text-slate-800">7,00 đến 7,99</td>
+                <td class="p-3">≥ 65 (Loại Khá)</td>
+                <td class="p-3 font-bold text-dut-800">100% mức học phí học kỳ</td>
+                <td class="p-3 text-center text-slate-400">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Technical constraints chips -->
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-600 pt-1">
+          <span class="font-bold text-slate-800">Điều kiện kỹ thuật (Khoản 2 Điều 5):</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">Số tín chỉ lần đầu: ≥ 15 tín chỉ</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">Không môn thi lần 1 nào &lt; 5.0</span>
+          <span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">Không bị kỷ luật khiển trách</span>
+        </div>
+      </div>
+
+      <!-- Split Layout: 8 cols (Procedure Content) + 4 cols (Sidebar Utilities) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Column Left: Stepper & Real Files from tai-lieu-riel (8 Cols) -->
+        <div class="lg:col-span-8 space-y-5">
+
+          <!-- Section 1: Stepper 3 Steps -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-md bg-dut-800 text-white flex items-center justify-center text-xs font-bold">1</span>
+                <span>Quy trình 3 bước thực hiện (Theo dõi tiến độ)</span>
+              </h2>
+              <div class="flex items-center gap-2 text-xs">
+                <span class="text-slate-500">Tiến độ:</span>
+                <span id="procedureProgressPercent" class="font-bold text-dut-800">33%</span>
+              </div>
+            </div>
+
+            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden border border-slate-200">
+              <div id="procedureProgressBar" class="bg-dut-700 h-full rounded-full transition-all duration-300" style="width: 33%"></div>
+            </div>
+
+            <div class="space-y-3">
+              <!-- Step 1 (Checked by default) -->
+              <div class="border border-slate-200 rounded-xl p-3.5 bg-slate-50/60 hover:bg-white transition-all space-y-1.5">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-start gap-3">
+                    <input type="checkbox" id="stepCheck1" checked data-step-title="Đối soát điểm trên sv.dut.udn.vn" class="step-checker mt-1 w-4 h-4 text-dut-700 rounded border-slate-300 focus:ring-dut-600 cursor-pointer"/>
+                    <label for="stepCheck1" class="cursor-pointer">
+                      <div class="text-[11px] font-bold text-dut-700 uppercase">Bước 1: Tự động đối soát</div>
+                      <h3 class="text-xs sm:text-sm font-bold text-slate-900">Kiểm tra ĐTBCHK (Thang 10) & ĐRL trên Cổng sinh viên</h3>
+                    </label>
+                  </div>
+                  <span class="text-[11px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Đã đạt ĐTB: 8.35</span>
+                </div>
+                <div class="pl-7 text-xs text-slate-600 flex items-center gap-2">
+                  <span>Dữ liệu đã tự động lấy từ sv.dut.udn.vn. Bạn đủ điều kiện hưởng <strong>Học bổng loại Giỏi (Loại B)</strong>.</span>
+                  <a href="https://sv.dut.udn.vn/" target="_blank" class="text-blue-800 font-bold underline inline-flex items-center gap-0.5">
+                    <span>Mở sv.dut.udn.vn</span>
+                    <span class="material-symbols-outlined text-[13px]">north_east</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="border border-slate-200 rounded-xl p-3.5 bg-slate-50/60 hover:bg-white transition-all space-y-1.5">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-start gap-3">
+                    <input type="checkbox" id="stepCheck2" data-step-title="Nộp minh chứng NCKH/Olympic" class="step-checker mt-1 w-4 h-4 text-dut-700 rounded border-slate-300 focus:ring-dut-600 cursor-pointer"/>
+                    <label for="stepCheck2" class="cursor-pointer">
+                      <div class="text-[11px] font-bold text-dut-700 uppercase">Bước 2: Bổ sung minh chứng (Nếu có)</div>
+                      <h3 class="text-xs sm:text-sm font-bold text-slate-900">Chuẩn bị chứng chỉ NCKH, Olympic tin học để ưu tiên xét chỉ tiêu</h3>
+                    </label>
+                  </div>
+                  <span class="text-[11px] bg-slate-200 text-slate-700 font-medium px-2 py-0.5 rounded">Tùy chọn</span>
+                </div>
+                <p class="pl-7 text-xs text-slate-600">
+                  Nếu số lượng sinh viên đủ điều kiện vượt quá quỹ học bổng phân bổ cho Lớp 23T_DT1, Hội đồng sẽ ưu tiên xét theo thứ tự điểm và minh chứng hoạt động NCKH (Điều 7 QĐ 1414).
+                </p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="border border-slate-200 rounded-xl p-3.5 bg-slate-50/60 hover:bg-white transition-all space-y-1.5">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-start gap-3">
+                    <input type="checkbox" id="stepCheck3" data-step-title="Xác nhận tài khoản ngân hàng" class="step-checker mt-1 w-4 h-4 text-dut-700 rounded border-slate-300 focus:ring-dut-600 cursor-pointer"/>
+                    <label for="stepCheck3" class="cursor-pointer">
+                      <div class="text-[11px] font-bold text-dut-700 uppercase">Bước 3: Hoàn tất & Nhận chi trả</div>
+                      <h3 class="text-xs sm:text-sm font-bold text-slate-900">Xác nhận tài khoản ngân hàng liên kết để nhận chi trả trực tiếp</h3>
+                    </label>
+                  </div>
+                  <span class="text-[11px] bg-blue-50 text-dut-800 font-bold px-2 py-0.5 rounded">Chuyển khoản</span>
+                </div>
+                <p class="pl-7 text-xs text-slate-600">
+                  Tiền học bổng sẽ được chuyển khoản trực tiếp vào tài khoản ngân hàng sinh viên do Nhà trường cấp (VietinBank/BIDV) sau khi có Quyết định ký duyệt chính thức (Điều 8 QĐ 1414).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Real Documents Attachments from tai-lieu-riel -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3">
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100">
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-md bg-dut-800 text-white flex items-center justify-center text-xs font-bold">2</span>
+                <span>Văn bản pháp quy gốc trong hệ thống</span>
+              </h2>
+              <span class="text-xs text-slate-500">3 tệp PDF chính thống</span>
+            </div>
+
+            <div class="divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden text-xs">
+              
+              <!-- File 1: QĐ 1414 -->
+              <div class="p-3.5 flex flex-wrap items-center justify-between gap-3 bg-white hover:bg-slate-50 transition-colors">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">18. Quyet dinh 1414/QD-DHBK Quy dinh xet cap HB SV DH chinh quy tai Truong DHBK-DHDN.pdf</div>
+                    <div class="text-slate-500 text-[11px]">Văn bản gốc ĐHBK Đà Nẵng • 3.78 MB • Kèm chữ ký PGS.TS Đoàn Quang Vinh</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="openDocPreview('qd1414', 'dieu6')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">find_in_page</span>
+                    <span>Xem bôi vàng</span>
+                  </button>
+                  <a href="tai-lieu-riel/QD_1414_DHBK.pdf" download="QD_1414_DHBK.pdf" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-dut-800 hover:bg-dut-700 text-white font-bold transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">download</span>
+                    <span>Tải về</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- File 2: VBHN 28 -->
+              <div class="p-3.5 flex flex-wrap items-center justify-between gap-3 bg-white hover:bg-slate-50 transition-colors">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">9. VBHN 28/VBHN-BGDDT Ve hoc bong khuyen khich hoc tap.pdf</div>
+                    <div class="text-slate-500 text-[11px]">Văn bản hợp nhất Bộ Giáo dục & Đào tạo • 350 KB</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="openDocPreview('vbhn28')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">find_in_page</span>
+                    <span>Xem bôi vàng</span>
+                  </button>
+                  <a href="tai-lieu-riel/VBHN_28_BGDDT.pdf" download="VBHN_28_BGDDT.pdf" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">download</span>
+                    <span>Tải về</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- File 3: TT 35 -->
+              <div class="p-3.5 flex flex-wrap items-center justify-between gap-3 bg-white hover:bg-slate-50 transition-colors">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">8. Thong tu 35/2011/TT-BGDDT Quy dinh ve trao nhan hoc bong.pdf</div>
+                    <div class="text-slate-500 text-[11px]">Thông tư Bộ GD&ĐT quy định trao & nhận học bổng • 993 KB</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" onclick="openDocPreview('tt35')" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">find_in_page</span>
+                    <span>Xem bôi vàng</span>
+                  </button>
+                  <a href="tai-lieu-riel/TT_35_2011_BGDDT.pdf" download="TT_35_2011_BGDDT.pdf" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[14px]">download</span>
+                    <span>Tải về</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Column Right: Sidebar Utilities (4 Cols) -->
+        <div class="lg:col-span-4 space-y-5">
+
+          <!-- Deadline Box -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Thời hạn phản hồi</span>
+              <span class="text-[11px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Hết hạn sau 5 ngày</span>
+            </div>
+
+            <div class="text-center py-2">
+              <div class="text-3xl font-black text-slate-900 font-mono tracking-tight">05 : 14 : 32</div>
+              <div class="text-[11px] text-slate-500 mt-1">Đến 17:00 ngày 30/10/2024</div>
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <button type="button" id="btnOpenApplyModal" class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-dut-800 hover:bg-dut-700 text-white font-bold text-xs shadow-xs hover:shadow transition-all">
+                <span class="material-symbols-outlined text-[16px]">send</span>
+                <span>Nộp đơn xác nhận / Minh chứng NCKH</span>
+              </button>
+
+              <button type="button" id="btnAddProcedureToCalendar" class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-xs transition-colors">
+                <span class="material-symbols-outlined text-[16px] text-dut-700">event_available</span>
+                <span>Đồng bộ mốc 30/10 vào Lịch cá nhân</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Unit Info Card -->
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-3 text-xs">
+            <h3 class="font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-dut-700">apartment</span>
+              <span>Đơn vị phụ trách xét duyệt</span>
+            </h3>
+
+            <div class="space-y-2 text-slate-600">
+              <div class="font-bold text-slate-800">Phòng Công tác Sinh viên (CTSV) — Khu A</div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[15px] text-slate-400">location_on</span>
+                <span>Phòng A104, Nhà A, 54 Nguyễn Lương Bằng, Đà Nẵng</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[15px] text-slate-400">call</span>
+                <span class="font-semibold text-slate-800">(0236) 3737084</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[15px] text-slate-400">mail</span>
+                <span class="text-dut-700 font-medium">ctsv.dhbk@dut.udn.vn</span>
+              </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-2.5 text-[11px] text-slate-500">
+              Tiếp sinh viên: 07:30 - 11:30 & 13:30 - 17:00 (Thứ 2 đến Thứ 6)
+            </div>
+          </div>
+
+          <!-- Direct Link to sv.dut.udn.vn -->
+          <div class="bg-linear-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-4 shadow-xs space-y-2 text-xs">
+            <div class="font-bold text-dut-900 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[18px] text-dut-700">open_in_new</span>
+              <span>Cổng Thông Tin Sinh Viên sv.dut.udn.vn</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Truy cập Cổng SV chính thức để tra cứu danh sách dự kiến chi tiết từng ngành và lịch đối soát tài khoản ngân hàng.
+            </p>
+            <a href="https://sv.dut.udn.vn/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold text-dut-800 hover:underline pt-1">
+              <span>Đến sv.dut.udn.vn ngay</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- SCREEN 3: TRỢ LÝ HỌC VỤ AI DUT (MAPPING QĐ 1414)        -->
+    <!-- ======================================================== -->
+    <div id="tab-assistant" class="tab-pane space-y-5">
+
+      <!-- Header Banner -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-dut-800 text-white flex items-center justify-center font-bold shadow-xs">
+            <span class="material-symbols-outlined text-[24px]">smart_toy</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h1 class="text-lg sm:text-xl font-bold text-slate-900">Trợ lý Học vụ AI — Trường ĐHBK Đà Nẵng</h1>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 status-pulse"></span>
+                Dữ liệu QĐ 1414/QĐ-ĐHBK
+              </span>
+            </div>
+            <p class="text-xs text-slate-500 mt-0.5">
+              Giải đáp quy chế đào tạo, điểm xét học bổng (thang 10), và thủ tục một cửa tại Trường ĐHBK - ĐHĐN.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button type="button" id="btnClearChat" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 text-xs font-medium transition-colors">
+            <span class="material-symbols-outlined text-[15px]">refresh</span>
+            <span>Làm mới hội thoại</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Split Layout: 4 cols (Prompts) + 8 cols (Interactive Chat Window) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Column Left: Suggested Questions & Legal Basis (4 Cols) -->
+        <div class="lg:col-span-4 space-y-4 text-xs">
+
+          <!-- Knowledge Sources Card -->
+          <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-xs space-y-2.5">
+            <span class="font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-dut-700">menu_book</span>
+              <span>Căn cứ văn bản đã nạp</span>
+            </span>
+            <div class="space-y-1.5">
+              <button type="button" onclick="openDocPreview('qd1414', 'dieu6')" class="w-full text-left p-2 rounded-lg bg-blue-50/70 border border-blue-200/60 hover:bg-blue-100/70 transition-colors flex items-center justify-between">
+                <span class="font-bold text-dut-900">QĐ 1414/QĐ-ĐHBK (ĐHBK Đà Nẵng)</span>
+                <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-1.5 py-0.5 rounded">Bôi vàng</span>
+              </button>
+              <button type="button" onclick="openDocPreview('vbhn28')" class="w-full text-left p-2 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors flex items-center justify-between">
+                <span class="font-semibold text-slate-700">VBHN 28/VBHN-BGDĐT</span>
+                <span class="text-[10px] text-slate-500">Bộ GD&ĐT</span>
+              </button>
+              <button type="button" onclick="openDocPreview('tt35')" class="w-full text-left p-2 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors flex items-center justify-between">
+                <span class="font-semibold text-slate-700">Thông tư 35/2011/TT-BGDĐT</span>
+                <span class="text-[10px] text-slate-500">Trao nhận HB</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Suggested Prompts -->
+          <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-xs space-y-2.5">
+            <span class="font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-amber-600">lightbulb</span>
+              <span>Câu hỏi mẫu thường gặp</span>
+            </span>
+            <div class="space-y-1.5">
+              <button type="button" class="prompt-suggestion-pill w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-dut-600 hover:bg-blue-50/50 transition-all text-slate-800 leading-snug group flex items-start gap-2" data-prompt="Điều kiện điểm học tập (thang 10) và điểm rèn luyện xét học bổng loại Giỏi (Loại B) theo QĐ 1414?">
+                <span class="material-symbols-outlined text-[15px] text-dut-600 shrink-0 mt-0.5">help_outline</span>
+                <span class="group-hover:text-dut-800 font-medium">Tiêu chuẩn học bổng loại Giỏi (Loại B) theo QĐ 1414?</span>
+              </button>
+
+              <button type="button" class="prompt-suggestion-pill w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-dut-600 hover:bg-blue-50/50 transition-all text-slate-800 leading-snug group flex items-start gap-2" data-prompt="Thủ tục xin cấp Giấy chứng nhận tạm hoãn Nghĩa vụ Quân sự tại DUT?">
+                <span class="material-symbols-outlined text-[15px] text-dut-600 shrink-0 mt-0.5">help_outline</span>
+                <span class="group-hover:text-dut-800 font-medium">Thủ tục xin Giấy xác nhận tạm hoãn NVQS tại DUT?</span>
+              </button>
+
+              <button type="button" class="prompt-suggestion-pill w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-dut-600 hover:bg-blue-50/50 transition-all text-slate-800 leading-snug group flex items-start gap-2" data-prompt="Thời hạn và số tín chỉ khi xin rút bớt học phần trong học kỳ tại DUT?">
+                <span class="material-symbols-outlined text-[15px] text-dut-600 shrink-0 mt-0.5">help_outline</span>
+                <span class="group-hover:text-dut-800 font-medium">Quy định rút bớt môn học trên sv.dut.udn.vn?</span>
+              </button>
+
+              <button type="button" class="prompt-suggestion-pill w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-dut-600 hover:bg-blue-50/50 transition-all text-slate-800 leading-snug group flex items-start gap-2" data-prompt="Chuẩn ngoại ngữ đầu ra tiếng Anh TOEIC đối với sinh viên chính quy K23 DUT?">
+                <span class="material-symbols-outlined text-[15px] text-dut-600 shrink-0 mt-0.5">help_outline</span>
+                <span class="group-hover:text-dut-800 font-medium">Chuẩn tiếng Anh đầu ra TOEIC của sinh viên DUT?</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Escalation link to sv.dut.udn.vn -->
+          <div class="bg-slate-100/80 border border-slate-200 rounded-xl p-3.5 space-y-1.5 text-slate-700">
+            <div class="font-bold text-slate-900 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-slate-600">contact_support</span>
+              <span>Hỗ trợ trực tiếp từ Chuyên viên</span>
+            </div>
+            <p class="leading-relaxed text-[11px]">Nếu có khiếu nại về điểm xét học bổng, sinh viên nộp phiếu phản hồi tại Phòng CTSV (Phòng A104 - Khu A) trong thời hạn 5 ngày.</p>
+            <div class="pt-1 font-bold text-dut-800">Hotline: (0236) 3737084</div>
+          </div>
+
+        </div>
+
+        <!-- Column Right: Chat Interface Container (8 Cols) -->
+        <div class="lg:col-span-8 bg-white border border-slate-200 rounded-xl shadow-xs flex flex-col h-[620px] overflow-hidden">
+
+          <!-- Chat Top Info Bar -->
+          <div class="px-5 py-2.5 border-b border-slate-200 bg-slate-50 flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="font-bold text-slate-800">Kênh Tư Vấn Học Vụ DUT</span>
+              <span class="text-slate-400">•</span>
+              <span class="text-slate-500">Sinh viên: Nguyễn Văn A (23T_DT1)</span>
+            </div>
+            <span class="text-[11px] text-slate-400">Trích xuất từ QĐ 1414/QĐ-ĐHBK</span>
+          </div>
+
+          <!-- Chat Messages Scroll Container -->
+          <div id="chatMessagesContainer" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 bg-slate-50/30">
+
+            <!-- Default Welcome AI Message -->
+            <div class="flex gap-3 justify-start animate-fade-in">
+              <div class="w-8 h-8 rounded-full bg-dut-800 text-white flex items-center justify-center shrink-0 text-xs font-bold shadow-xs">
+                DUT
+              </div>
+              <div class="flex flex-col gap-1.5 max-w-2xl">
+                <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs text-slate-800 text-xs sm:text-sm leading-relaxed chat-bubble-ai">
+                  Xin chào bạn <strong>Nguyễn Văn A (Lớp 23T_DT1 - Khoa CNTT)</strong>! Tôi là Trợ lý Học vụ ảo của <strong>Trường Đại học Bách khoa - Đại học Đà Nẵng</strong>.<br/><br/>
+                  Mọi câu trả lời của tôi đều được trích xuất trực tiếp từ <strong>Quyết định 1414/QĐ-ĐHBK</strong> và văn bản pháp quy hiện hành của Nhà trường. Bạn có thể chọn câu hỏi mẫu bên trái hoặc nhập trực tiếp câu hỏi vào ô bên dưới!
+                </div>
+                <div class="flex items-center gap-2 px-1 text-xs text-slate-500">
+                  <span class="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    QĐ 1414/QĐ-ĐHBK & sv.dut.udn.vn
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Chat Input Bar -->
+          <div class="p-3 sm:p-4 border-t border-slate-200 bg-white">
+            <div class="relative flex items-center gap-2">
+              <input 
+                type="text" 
+                id="aiChatInput" 
+                placeholder="Nhập câu hỏi quy chế (Ví dụ: điều kiện điểm học bổng loại giỏi, thời gian rút môn, tạm hoãn nghĩa vụ...)" 
+                class="flex-1 py-2.5 pl-3.5 pr-12 bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 focus:border-dut-800 rounded-xl text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-dut-600/20 transition-all"
+              />
+              <button 
+                type="button" 
+                id="btnSendAiChat" 
+                class="absolute right-2 p-1.5 rounded-lg bg-dut-800 hover:bg-dut-700 text-white transition-colors flex items-center justify-center shadow-xs"
+                title="Gửi câu hỏi"
+              >
+                <span class="material-symbols-outlined text-[18px]">send</span>
+              </button>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2 px-1">
+              <span>Nhấn <strong>Enter</strong> để gửi</span>
+              <span>Căn cứ pháp lý QĐ 1414/QĐ-ĐHBK ngày 24/5/2021</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- SCREEN 4: LỊCH THEO DÕI HẠN CHÓT & BẢN TIN DUT         -->
+    <!-- ======================================================== -->
+    <div id="tab-calendar" class="tab-pane space-y-5">
+
+      <!-- Profile Filter Banner -->
+      <div class="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-xs flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-dut-800 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[24px]">calendar_month</span>
+          </div>
+          <div>
+            <h1 class="text-base sm:text-xl font-bold text-slate-900">Lịch Theo dõi Hạn chót & Bảng tin Sinh viên DUT</h1>
+            <p class="text-xs text-slate-500">
+              Đồng bộ trực tiếp các mốc học vụ quan trọng của Trường ĐH Bách khoa - ĐH Đà Nẵng.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="font-bold text-slate-700">Hồ sơ nhận tin:</span>
+          <span class="px-2.5 py-1 rounded-md bg-blue-50 text-dut-800 font-bold border border-blue-200">Khoa CNTT</span>
+          <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 font-bold">Lớp 23T_DT1</span>
+          <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600">Học kỳ 1 (2024 - 2025)</span>
+        </div>
+      </div>
+
+      <!-- Split Layout: 5 cols (Notifications Setup) + 7 cols (Deadlines Timeline & News) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Column Left: Notification Settings Center (5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div>
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="material-symbols-outlined text-dut-700 text-[20px]">mark_email_read</span>
+                <span>Cài đặt Kênh Nhắc hạn tự động</span>
+              </h2>
+              <p class="text-xs text-slate-500 mt-0.5">Không bao giờ bỏ lỡ hạn phản hồi danh sách học bổng hoặc điều chỉnh môn học.</p>
+            </div>
+
+            <div class="space-y-2.5 text-xs">
+              <!-- Toggle 1: Email (ON) -->
+              <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/70 flex items-start justify-between gap-3">
+                <div class="space-y-0.5">
+                  <div class="font-bold text-slate-900 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-dut-700 text-[16px]">mail</span>
+                    <span>Email sinh viên (@sv.dut.udn.vn)</span>
+                  </div>
+                  <div class="text-[11px] text-slate-500">
+                    Địa chỉ: <strong class="text-slate-800">102230088@sv.dut.udn.vn</strong>
+                  </div>
+                  <div class="text-[11px] text-dut-700 font-semibold">Gửi trước 3 ngày & trước 24 giờ</div>
+                </div>
+                <button type="button" role="switch" aria-checked="true" class="setting-toggle-btn shrink-0 w-11 h-6 bg-dut-800 rounded-full transition-colors relative cursor-pointer focus:outline-none">
+                  <span class="toggle-knob inline-block w-4 h-4 bg-white rounded-full transition-transform translate-x-5 shadow-xs"></span>
+                </button>
+              </div>
+
+              <!-- Toggle 2: SMS (OFF) -->
+              <div class="p-3 rounded-xl border border-slate-200 bg-slate-50/70 flex items-start justify-between gap-3">
+                <div class="space-y-0.5">
+                  <div class="font-bold text-slate-900 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-amber-600 text-[16px]">sms</span>
+                    <span>Tin nhắn SMS khẩn cấp</span>
+                  </div>
+                  <div class="text-[11px] text-slate-500">
+                    Số điện thoại: <strong class="text-slate-800">098****123</strong> (Chỉ nhắc khi còn dưới 24h)
+                  </div>
+                </div>
+                <button type="button" role="switch" aria-checked="false" class="setting-toggle-btn shrink-0 w-11 h-6 bg-slate-300 rounded-full transition-colors relative cursor-pointer focus:outline-none">
+                  <span class="toggle-knob inline-block w-4 h-4 bg-white rounded-full transition-transform translate-x-1 shadow-xs"></span>
+                </button>
+              </div>
+            </div>
+
+            <button type="button" id="btnSaveNotifSettings" class="w-full py-2.5 px-4 rounded-xl bg-dut-800 hover:bg-dut-700 text-white font-bold text-xs transition-colors shadow-xs">
+              Lưu cấu hình thông báo
+            </button>
+          </div>
+        </div>
+
+        <!-- Column Right: Deadlines Timeline (7 Cols) -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-100">
+              <h2 class="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+                <span class="material-symbols-outlined text-rose-600 text-[20px]">event_upcoming</span>
+                <span>Lịch trình Hạn chót Học kỳ 1 — DUT</span>
+              </h2>
+              
+              <div class="flex items-center gap-1 text-xs">
+                <button type="button" data-cal-filter="all" class="cal-filter-btn px-2.5 py-1 rounded-md font-bold bg-dut-800 text-white">Tất cả</button>
+                <button type="button" data-cal-filter="scholarship" class="cal-filter-btn px-2.5 py-1 rounded-md font-semibold bg-white text-slate-700 hover:bg-slate-100">Học bổng</button>
+                <button type="button" data-cal-filter="academic" class="cal-filter-btn px-2.5 py-1 rounded-md font-semibold bg-white text-slate-700 hover:bg-slate-100">Học vụ</button>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+
+              <!-- Event 1: HB KKHT -->
+              <div class="cal-event-card border border-slate-200 hover:border-dut-600 rounded-xl p-4 flex items-start gap-4 transition-all" data-cal-cat="scholarship">
+                <div class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 flex flex-col items-center justify-center shrink-0">
+                  <span class="text-[10px] font-bold uppercase">Th.10</span>
+                  <span class="text-base font-extrabold leading-none">30</span>
+                </div>
+                <div class="flex-1 space-y-1">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-[11px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded">Hết hạn sau 5 ngày</span>
+                    <span class="text-xs text-slate-400">17:00</span>
+                  </div>
+                  <h3 class="text-xs sm:text-sm font-bold text-slate-900">Hạn chót phản hồi danh sách dự kiến nhận Học bổng KKHT (QĐ 1414)</h3>
+                  <p class="text-xs text-slate-600">Sinh viên kiểm tra danh sách trên sv.dut.udn.vn và gửi thắc mắc (nếu có) về Phòng CTSV.</p>
+                  <div class="pt-1 flex items-center gap-3">
+                    <a href="#procedure" onclick="switchTab('procedure')" class="text-xs font-bold text-dut-700 hover:underline inline-flex items-center gap-1">
+                      <span>Xem thủ tục chi tiết</span>
+                      <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+                    </a>
+                    <button type="button" onclick="openDocPreview('qd1414', 'dieu7')" class="text-xs font-bold text-amber-900 hover:underline">
+                      Xem Điều 7 QĐ 1414
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 2: Rút môn -->
+              <div class="cal-event-card border border-slate-200 hover:border-dut-600 rounded-xl p-4 flex items-start gap-4 transition-all" data-cal-cat="academic">
+                <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 text-dut-800 flex flex-col items-center justify-center shrink-0">
+                  <span class="text-[10px] font-bold uppercase">Th.11</span>
+                  <span class="text-base font-extrabold leading-none">05</span>
+                </div>
+                <div class="flex-1 space-y-1">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-[11px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Đào tạo tín chỉ</span>
+                    <span class="text-xs text-slate-400">23:59</span>
+                  </div>
+                  <h3 class="text-xs sm:text-sm font-bold text-slate-900">Hạn chót xin Rút bớt học phần trên sv.dut.udn.vn (Tuần 4)</h3>
+                  <p class="text-xs text-slate-600">Đảm bảo tổng số tín chỉ sau khi rút tối thiểu là 12 tín chỉ.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== DOCUMENT PREVIEW MODAL (WITH YELLOW HIGHLIGHT) ==================== -->
+  <div id="documentPreviewModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-3 sm:p-6">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden animate-fade-in">
+      
+      <!-- Modal Top Bar -->
+      <div class="px-5 py-3.5 bg-dut-900 text-white flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[20px] text-amber-300">find_in_page</span>
+          </div>
+          <div class="min-w-0">
+            <h3 id="previewModalDocTitle" class="text-xs sm:text-sm font-bold truncate">Quyết định 1414/QĐ-ĐHBK</h3>
+            <p id="previewModalDocSubtitle" class="text-[11px] text-slate-300 truncate">Văn bản gốc kèm phần trích dẫn bôi vàng</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 shrink-0">
+          <a id="previewModalDownloadBtn" href="tai-lieu-riel/QD_1414_DHBK.pdf" download="QD_1414_DHBK.pdf" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-semibold transition-colors">
+            <span class="material-symbols-outlined text-[15px]">download</span>
+            <span class="hidden sm:inline">Tải PDF gốc</span>
+          </a>
+          <a id="previewModalRawPdfBtn" href="tai-lieu-riel/QD_1414_DHBK.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-semibold transition-colors">
+            <span class="material-symbols-outlined text-[15px]">open_in_new</span>
+            <span class="hidden sm:inline">Mở PDF tab mới</span>
+          </a>
+          <button type="button" id="previewModalCloseBtn" onclick="closeDocPreview()" class="w-8 h-8 rounded-lg hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Yellow Highlight Notice Bar -->
+      <div class="bg-amber-100/90 border-b border-amber-200 px-5 py-2 flex items-center justify-between text-xs text-amber-950 font-medium">
+        <span class="flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-amber-700 text-[16px]">highlight</span>
+          <span>Các điều khoản trọng tâm liên quan trực tiếp đến sinh viên được <strong>bôi vàng</strong> bên dưới:</span>
+        </span>
+        <span class="text-[11px] text-amber-800 hidden sm:inline">Trường ĐH Bách khoa - ĐH Đà Nẵng</span>
+      </div>
+
+      <!-- Modal Body (Official Paper Emulation) -->
+      <div id="previewModalDocBody" class="flex-1 overflow-y-auto p-5 sm:p-8 bg-slate-50/50">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-5 py-3 bg-white border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+        <span>Nguồn tệp gốc: <strong class="text-slate-700 font-mono">tai-lieu-riel/</strong></span>
+        <button type="button" onclick="closeDocPreview()" class="px-4 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 text-slate-700 font-bold">
+          Đóng cửa sổ
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== APPLICATION MODAL DIALOG ==================== -->
+  <div id="applyProcedureModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl border border-slate-200 space-y-4 animate-fade-in">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-blue-50 text-dut-800 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[20px]">send</span>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-900">Xác Nhận Hồ Sơ Học Bổng KKHT (QĐ 1414)</h3>
+            <span class="text-[11px] text-slate-500">Trường ĐHBK Đà Nẵng • Lớp 23T_DT1</span>
+          </div>
+        </div>
+        <button type="button" id="btnCloseApplyModal" class="text-slate-400 hover:text-slate-600 p-1 rounded-full">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1">
+          <div class="text-slate-500">Sinh viên:</div>
+          <div class="font-bold text-slate-900 text-sm">Nguyễn Văn A (MSSV: 102230088)</div>
+          <div class="text-slate-600">Lớp: 23T_DT1 • Khoa CNTT • ĐTBCHK: 8.35 • ĐRL: 86 (Đạt Loại Giỏi)</div>
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="font-bold text-slate-800">Đính kèm minh chứng NCKH / Giải thưởng (PDF, tối đa 10MB):</label>
+          <div class="border-2 border-dashed border-slate-300 hover:border-dut-700 rounded-xl p-4 text-center cursor-pointer transition-colors">
+            <span class="material-symbols-outlined text-slate-400 text-[26px]">upload_file</span>
+            <div class="text-xs font-semibold text-slate-700 mt-1">Bấm để chọn tệp minh chứng hoặc kéo thả vào đây</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">Không bắt buộc nếu chỉ nhận mức theo ĐTB chuẩn</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">
+        <button type="button" onclick="document.getElementById('applyProcedureModal').classList.add('hidden')" class="px-4 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-semibold">
+          Hủy bỏ
+        </button>
+        <button type="button" id="btnConfirmApply" class="px-4 py-2 rounded-xl bg-dut-800 hover:bg-dut-700 text-white text-xs font-bold shadow-xs">
+          Xác nhận gửi hồ sơ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="globalToast" class="fixed bottom-6 right-6 z-50 hidden toast-notice flex items-center gap-3 px-4 py-3 bg-slate-900 text-white rounded-xl shadow-xl max-w-sm border border-slate-700 text-xs sm:text-sm">
+    <span class="material-symbols-outlined text-emerald-400 text-[22px] shrink-0">check_circle</span>
+    <div class="flex flex-col min-w-0">
+      <span id="toastTitle" class="font-bold text-white text-xs">Thông báo</span>
+      <span id="toastMessage" class="text-slate-300 text-xs truncate">Nội dung</span>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER CHUẨN ĐHBK ĐÀ NẴNG ==================== -->
+  <footer class="mt-auto bg-white border-t border-slate-200 py-6 text-xs text-slate-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+        <div class="space-y-1">
+          <div class="font-bold text-slate-900 text-sm">TRƯỜNG ĐẠI HỌC BÁCH KHOA — ĐẠI HỌC ĐÀ NẴNG</div>
+          <div class="text-slate-500">Địa chỉ: Số 54 Nguyễn Lương Bằng, P. Hòa Khánh Bắc, Q. Liên Chiểu, TP. Đà Nẵng</div>
+          <div class="text-slate-500">
+            Điện thoại: <strong>(0236) 3842308</strong> | Phòng Đào tạo: <strong>(0236) 3736938</strong> | Phòng CTSV: <strong>(0236) 3737084</strong>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 text-xs">
+          <a href="https://dut.udn.vn/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold transition-colors">
+            Trang chủ DUT
+          </a>
+          <a href="https://sv.dut.udn.vn/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-dut-800 font-bold transition-colors">
+            Cổng SV: sv.dut.udn.vn
+          </a>
+          <a href="https://dut.udn.vn/VanBanPhapQuy/page/1" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold transition-colors">
+            VB Pháp quy DUT
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
+        <span>© 2024 Trường Đại học Bách khoa - Đại học Đà Nẵng. Hệ thống hỗ trợ sinh viên trực tuyến.</span>
+        <span>Hỗ trợ kỹ thuật: support.student@dut.udn.vn</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

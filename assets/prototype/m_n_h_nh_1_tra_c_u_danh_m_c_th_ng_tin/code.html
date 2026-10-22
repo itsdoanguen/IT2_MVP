@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Màn Hình 1: Tra cứu & Danh mục Quy chế | Cổng Hỗ Trợ Sinh Viên</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+</head>
+<body class="min-h-full bg-slate-50 text-slate-800 flex flex-col font-sans antialiased">
+  <!-- Top notice banner linking to the Master SPA -->
+  <div class="bg-blue-900 text-white text-xs px-4 py-2 flex items-center justify-between">
+    <span>💡 <strong>Giao diện đã được chuẩn hóa UI/UX:</strong> Loại bỏ các chi tiết thừa và token màu Material lỗi thời.</span>
+    <a href="../index.html#catalog" class="underline font-bold text-blue-200 hover:text-white">Mở phiên bản Master SPA chuyển đổi mượt mà →</a>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between gap-4">
+        <a href="../index.html#catalog" class="flex items-center gap-3 shrink-0">
+          <div class="w-10 h-10 rounded-xl bg-blue-800 text-white flex items-center justify-center font-bold shadow-xs">
+            <span class="material-symbols-outlined text-[24px]">school</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xs font-bold text-blue-800 tracking-wider uppercase">Cổng Hỗ Trợ Sinh Viên</span>
+            <span class="text-[13px] font-semibold text-slate-900 leading-tight">Đại Học Quốc Gia TP.HCM</span>
+          </div>
+        </a>
+        <nav class="hidden lg:flex items-center gap-1 bg-slate-100/80 p-1 rounded-xl border border-slate-200/60">
+          <a href="../index.html#catalog" class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm font-semibold bg-blue-50 text-blue-700 shadow-xs">
+            <span class="material-symbols-outlined text-[18px]">menu_book</span>
+            <span>Tra cứu & Quy chế</span>
+          </a>
+          <a href="../index.html#procedure" class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+            <span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+            <span>Chi tiết thủ tục</span>
+          </a>
+          <a href="../index.html#assistant" class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+            <span class="material-symbols-outlined text-[18px]">smart_toy</span>
+            <span>Trợ lý học vụ AI</span>
+          </a>
+          <a href="../index.html#calendar" class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+            <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+            <span>Lịch & Bản tin</span>
+          </a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="../index.html" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-blue-700 text-white hover:bg-blue-800 transition-colors">
+            Mở Bản Tổng Hợp SPA
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+    <div class="bg-white border border-slate-200 rounded-xl px-5 py-3.5 flex flex-wrap items-center justify-between gap-4 shadow-xs">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-[20px]">badge</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm">
+          <span class="font-semibold text-slate-900">Khoa Công nghệ Thông tin</span>
+          <span class="text-slate-300">|</span>
+          <span class="text-slate-600">Chuyên ngành Kỹ thuật Phần mềm</span>
+          <span class="text-slate-300">|</span>
+          <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">Học kỳ 1 / 2024 - 2025</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="text-right">
+          <div class="text-[11px] uppercase tracking-wider text-slate-500 font-medium">Tiến độ tín chỉ</div>
+          <div class="text-xs font-bold text-blue-800">48 / 136 tín chỉ <span class="font-normal text-slate-500">(35.2%)</span></div>
+        </div>
+        <div class="w-20 bg-slate-100 h-2 rounded-full overflow-hidden border border-slate-200">
+          <div class="bg-blue-600 h-full rounded-full" style="width: 35.2%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-xs space-y-5">
+      <div>
+        <div class="flex items-center gap-1.5 text-blue-700 text-xs font-bold uppercase tracking-wider mb-1">
+          <span class="material-symbols-outlined text-[16px]">travel_explore</span>
+          <span>Hệ Thống Tra Cứu Trực Tuyến</span>
+        </div>
+        <h1 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Tra cứu Quy chế đào tạo, Thủ tục hành chính & Học bổng</h1>
+        <p class="text-sm text-slate-600 mt-1">Tìm kiếm tức thời các biểu mẫu, hướng dẫn học vụ và chính sách hỗ trợ sinh viên đang áp dụng.</p>
+      </div>
+
+      <div class="relative flex items-center">
+        <span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">search</span>
+        <input type="text" placeholder="Nhập từ khóa tìm kiếm (Ví dụ: học bổng khuyến khích, hoãn thi, tạm hoãn nghĩa vụ...)" class="w-full pl-10 pr-10 py-3 bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 focus:border-blue-600 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-3 focus:ring-blue-500/15 transition-all"/>
+      </div>
+    </div>
+
+    <!-- Results Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="catalog-card bg-white border border-slate-200 hover:border-blue-500 hover:shadow-md rounded-xl p-5 flex flex-col justify-between transition-all">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">Học bổng Khuyến khích</span>
+            <span class="text-xs font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">Hạn: 30/10/2024</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">Hướng dẫn xét cấp Học bổng Khuyến khích học tập HK1</h2>
+          <p class="text-xs text-slate-600 line-clamp-2">Áp dụng cho sinh viên chính quy K23 Khoa CNTT. Tiêu chuẩn xét duyệt GPA từ 3.20 trở lên và Điểm rèn luyện loại Tốt.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs text-emerald-600 font-medium">Đang mở tiếp nhận</span>
+          <a href="../index.html#procedure" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold transition-colors">
+            <span>Xem quy trình</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="catalog-card bg-white border border-slate-200 hover:border-blue-500 hover:shadow-md rounded-xl p-5 flex flex-col justify-between transition-all">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between gap-2">
+            <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">Thủ tục một cửa</span>
+            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Xử lý: 48h</span>
+          </div>
+          <h2 class="text-base font-bold text-slate-900">Cấp Giấy chứng nhận sinh viên tạm hoãn Nghĩa vụ Quân sự</h2>
+          <p class="text-xs text-slate-600 line-clamp-2">Cung cấp bản số hóa có ký số gửi qua email hoặc bản giấy đóng dấu mộc đỏ lấy trực tiếp tại phòng CTSV.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs text-slate-500">Phòng CTSV</span>
+          <a href="../index.html#procedure" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-medium transition-colors">
+            <span>Chi tiết</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="mt-auto bg-white border-t border-slate-200 py-4 text-xs text-slate-500 text-center">
+    Đại Học Quốc Gia TP.HCM • Cổng Thông Tin & Hỗ Trợ Sinh Viên
+  </footer>
+</body>
+</html>
