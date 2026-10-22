@@ -4,13 +4,13 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cổng Dịch Vụ & Hỗ Trợ Sinh Viên | Trường Đại Học Bách Khoa - Đại Học Đà Nẵng</title>
-  
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -63,7 +63,7 @@
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="h-16 flex items-center justify-between gap-4">
-        
+
         <!-- DUT University Emblem & Title -->
         <a href="#catalog" data-target-tab="catalog" class="flex items-center gap-3 shrink-0 group">
           <div class="w-10 h-10 rounded-xl bg-dut-800 text-white flex items-center justify-center font-bold shadow-xs group-hover:bg-dut-700 transition-colors">
@@ -104,9 +104,8 @@
 
           <!-- Student Profile Chip -->
           <div class="flex items-center gap-2.5 pl-2 border-l border-slate-200">
-            <div class="w-8 h-8 rounded-full bg-dut-800 text-white flex items-center justify-center text-xs font-bold shadow-xs">
-              NA
-            </div>
+              <img src="assets/itnhat.png" alt="Nguyễn Văn A" class="w-8 h-8
+                rounded-full object-cover shadow-xs" />
             <div class="hidden sm:flex flex-col text-left">
               <span class="text-xs font-bold text-slate-900 leading-none">Nguyễn Văn A</span>
               <span class="text-[11px] text-slate-500 mt-0.5">MSSV: 102230088 • Lớp: 23T_DT1</span>
@@ -133,7 +132,7 @@
     <!-- SCREEN 1: TRA CỨU & DANH MỤC QUY CHẾ DUT                -->
     <!-- ======================================================== -->
     <div id="tab-catalog" class="tab-pane active space-y-5">
-      
+
       <!-- Academic Status Strip: Compact, Clean, Scannable -->
       <div class="bg-white border border-slate-200 rounded-xl px-4 py-3 flex flex-wrap items-center justify-between gap-4 shadow-xs">
         <div class="flex items-center gap-3">
@@ -171,7 +170,7 @@
             </h1>
             <p class="text-xs text-slate-500 mt-0.5">Đối chiếu tức thời từ Quyết định số 1414/QĐ-ĐHBK và Cổng văn bản pháp quy DUT.</p>
           </div>
-          
+
           <a href="https://dut.udn.vn/VanBanPhapQuy/page/1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs text-dut-700 font-bold hover:underline self-start sm:self-auto">
             <span>Mở trang Văn bản Pháp quy DUT</span>
             <span class="material-symbols-outlined text-[14px]">open_in_new</span>
@@ -181,10 +180,10 @@
         <!-- Search Bar -->
         <div class="relative flex items-center">
           <span class="material-symbols-outlined absolute left-3.5 text-slate-400 text-[20px] pointer-events-none">search</span>
-          <input 
-            type="text" 
-            id="catalogSearchInput" 
-            placeholder="Nhập từ khóa tìm kiếm (Ví dụ: 1414, học bổng loại giỏi, tín chỉ, tạm hoãn nghĩa vụ quân sự...)" 
+          <input
+            type="text"
+            id="catalogSearchInput"
+            placeholder="Nhập từ khóa tìm kiếm (Ví dụ: 1414, học bổng loại giỏi, tín chỉ, tạm hoãn nghĩa vụ quân sự...)"
             class="w-full pl-10 pr-10 py-2.5 bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 focus:border-dut-800 rounded-xl text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-dut-600/20 transition-all"
           />
           <button type="button" id="clearSearchBtn" class="absolute right-3 text-slate-400 hover:text-slate-600 p-1 rounded-full hidden">
@@ -596,7 +595,7 @@
             </div>
 
             <div class="divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden text-xs">
-              
+
               <!-- File 1: QĐ 1414 -->
               <div class="p-3.5 flex flex-wrap items-center justify-between gap-3 bg-white hover:bg-slate-50 transition-colors">
                 <div class="flex items-center gap-3">
@@ -891,15 +890,15 @@
           <!-- Chat Input Bar -->
           <div class="p-3 sm:p-4 border-t border-slate-200 bg-white">
             <div class="relative flex items-center gap-2">
-              <input 
-                type="text" 
-                id="aiChatInput" 
-                placeholder="Nhập câu hỏi quy chế (Ví dụ: điều kiện điểm học bổng loại giỏi, thời gian rút môn, tạm hoãn nghĩa vụ...)" 
+              <input
+                type="text"
+                id="aiChatInput"
+                placeholder="Nhập câu hỏi quy chế (Ví dụ: điều kiện điểm học bổng loại giỏi, thời gian rút môn, tạm hoãn nghĩa vụ...)"
                 class="flex-1 py-2.5 pl-3.5 pr-12 bg-slate-50 hover:bg-white focus:bg-white border border-slate-200 focus:border-dut-800 rounded-xl text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-dut-600/20 transition-all"
               />
-              <button 
-                type="button" 
-                id="btnSendAiChat" 
+              <button
+                type="button"
+                id="btnSendAiChat"
                 class="absolute right-2 p-1.5 rounded-lg bg-dut-800 hover:bg-dut-700 text-white transition-colors flex items-center justify-center shadow-xs"
                 title="Gửi câu hỏi"
               >
@@ -1008,7 +1007,7 @@
                 <span class="material-symbols-outlined text-rose-600 text-[20px]">event_upcoming</span>
                 <span>Lịch trình Hạn chót Học kỳ 1 — DUT</span>
               </h2>
-              
+
               <div class="flex items-center gap-1 text-xs">
                 <button type="button" data-cal-filter="all" class="cal-filter-btn px-2.5 py-1 rounded-md font-bold bg-dut-800 text-white">Tất cả</button>
                 <button type="button" data-cal-filter="scholarship" class="cal-filter-btn px-2.5 py-1 rounded-md font-semibold bg-white text-slate-700 hover:bg-slate-100">Học bổng</button>
@@ -1072,7 +1071,7 @@
   <!-- ==================== DOCUMENT PREVIEW MODAL (WITH YELLOW HIGHLIGHT) ==================== -->
   <div id="documentPreviewModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-3 sm:p-6">
     <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden animate-fade-in">
-      
+
       <!-- Modal Top Bar -->
       <div class="px-5 py-3.5 bg-dut-900 text-white flex items-center justify-between gap-3">
         <div class="flex items-center gap-2.5 min-w-0">
